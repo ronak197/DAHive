@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'glance.dart';
 import 'timeline.dart';
 import 'news.dart';
+import 'addeventpage.dart';
 
-void main () => runApp(new MyApp());
+void main () => runApp(new AddEvent());
 
 class MyApp extends StatelessWidget {
   @override
@@ -115,7 +116,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
       body: new TabBarView(
         controller: tabController,
         children: <Widget>[
-          Glance(),
+          GlancePage(),
           Timeline(),
           News()
         ],
