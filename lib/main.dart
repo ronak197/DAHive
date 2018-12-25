@@ -3,8 +3,9 @@ import 'glance.dart';
 import 'timeline.dart';
 import 'news.dart';
 import 'addeventpage.dart';
+import 'login_page.dart';
 
-void main () => runApp(new AddEvent());
+void main () => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -51,6 +52,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
     super.dispose();
     tabController.dispose();
   }
+
+  void onchangebutton() {
+
+
+}
 
   @override
   Widget build(BuildContext context) {
@@ -133,10 +139,24 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
                     child: new Text("R"),
                     radius: 30.0,
                   ),
-                  new Padding(padding: EdgeInsetsDirectional.only(top: 15.0)),
-                  new Text("Ronak Jain", style: TextStyle(color: Colors.black87),),
-                  new Padding(padding: EdgeInsetsDirectional.only(top: 5.0)),
-                  new Text("201701419@daiict.ac.in",style: TextStyle(color: Colors.grey,fontSize: 11.0),),
+                  ExpansionTile(
+                    title: Container(
+                      color: Colors.yellow,
+                      padding: EdgeInsets.only(top: 15.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Container(
+                              alignment: Alignment.centerLeft,
+                              child: Text("Ronak Jain", style: TextStyle(color: Colors.black87), textAlign: TextAlign.left, textDirection: TextDirection.ltr,)),
+                          Container(
+                              padding: EdgeInsets.only(top: 5.0),
+                              alignment: Alignment.centerLeft,
+                              child: Text("201701419@daiict.ac.in",style: TextStyle(color: Colors.grey,fontSize: 11.0),)),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -164,6 +184,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
             new ListTile(
               leading: new Icon(Icons.info,color: Colors.blue,),
               title: new Text("About Us", style: TextStyle(color: Colors.grey),),
+              onTap: () => {},
+            ),
+            new Divider(),
+            new ListTile(
+              leading: new Icon(Icons.exit_to_app,color: Colors.blue,),
+              title: new Text("Sign Out", style: TextStyle(color: Colors.grey),),
               onTap: () => {},
             ),
           ],

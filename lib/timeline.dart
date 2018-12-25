@@ -12,10 +12,10 @@ class Timeline extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   Container(
-                    constraints: BoxConstraints.tightForFinite(width: double.maxFinite, height: 250.0),
+                    constraints: BoxConstraints.tightForFinite(width: double.maxFinite, height: 200.0),
                     child: Ink.image(
                       image: AssetImage("assets/dec_photo.jpeg"),
-                      fit: BoxFit.fill,
+                      fit: BoxFit.cover,
                       child: Container(
                         padding: EdgeInsets.only(left: 20.0,top: 20.0),
                         child: Text(
@@ -108,7 +108,7 @@ class Timeline extends StatelessWidget {
                                           style: BorderStyle.none
                                       ),
                                     ),
-                                    margin: EdgeInsets.only(right: 25.0, top: 10.0),
+                                    margin: EdgeInsets.only(right: 25.0, top: 5.0),
                                     padding: EdgeInsets.all(10.0),
                                     child: Text("Endeavour Session",style: TextStyle(
                                         fontSize: 15.0,
@@ -133,7 +133,7 @@ class Timeline extends StatelessWidget {
                                           style: BorderStyle.none
                                       ),
                                     ),
-                                    margin: EdgeInsets.only(right: 25.0, top: 10.0),
+                                    margin: EdgeInsets.only(right: 25.0, top: 5.0),
                                     padding: EdgeInsets.all(10.0),
                                     child: Text("Endeavour Session",style: TextStyle(
                                         fontSize: 15.0,

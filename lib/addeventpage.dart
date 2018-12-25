@@ -186,7 +186,7 @@ class _AddEventDetailsState extends State<AddEventDetails>  {
                   children: <Widget>[
                     Container(
                       padding: EdgeInsets.only(left: 15.0),
-                      child: Text("Team Strength : "),
+                      child: Text("Team Strength : ", style: TextStyle(color: Colors.grey),),
                     ),
                     Container(
                       width: 50.0,
@@ -225,7 +225,7 @@ class _AddEventDetailsState extends State<AddEventDetails>  {
                   children: <Widget>[
                     Container(
                       padding: EdgeInsets.only(left: 15.0),
-                      child: Text("No. of Volunteers : "),
+                      child: Text("No. of Volunteers : ", style: TextStyle(color: Colors.grey),),
                     ),
                     Container(
                       width: 70.0,
