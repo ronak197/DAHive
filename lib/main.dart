@@ -53,11 +53,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
     tabController.dispose();
   }
 
-  void onchangebutton() {
-
-
-}
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -130,71 +125,107 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
-            DrawerHeader(
-              child: new Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  new Padding(padding: EdgeInsetsDirectional.only(top: 10.0)),
-                  new CircleAvatar(
-                    child: new Text("R"),
+            Divider(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.only(left: 15.0, top: 15.0, bottom: 5.0),
+                  child: CircleAvatar(
+                    child: Text("R"),
                     radius: 30.0,
                   ),
-                  ExpansionTile(
-                    title: Container(
-                      color: Colors.yellow,
-                      padding: EdgeInsets.only(top: 15.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Container(
+                ),
+                ExpansionTile(
+                  title: accountInfo(name: "Ronak Jain", emailID: "201701419@daiict.ac.in"),
+                  children: <Widget>[
+                    ListTile(
+                      title: accountInfo(),
+                      leading: Container(
+                        child: Icon(Icons.account_circle, size: 30.0, color: Colors.blue,),
+                      ),
+                      onTap: ()  {},
+                    ),
+                    ListTile(
+                      title: Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Container(
                               alignment: Alignment.centerLeft,
-                              child: Text("Ronak Jain", style: TextStyle(color: Colors.black87), textAlign: TextAlign.left, textDirection: TextDirection.ltr,)),
-                          Container(
-                              padding: EdgeInsets.only(top: 5.0),
-                              alignment: Alignment.centerLeft,
-                              child: Text("201701419@daiict.ac.in",style: TextStyle(color: Colors.grey,fontSize: 11.0),)),
-                        ],
+                              child: Text("Add another account", style: TextStyle(color: Colors.black87), textAlign: TextAlign.left, textDirection: TextDirection.ltr,),
+                            ),
+                          ],
+                        ),
+                      ),
+                      onTap: () {},
+                      leading: Container(
+                        child: Icon(Icons.add_circle, size: 30.0, color: Colors.blue,),
                       ),
                     ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
+              ],
             ),
-            new ListTile(
-              leading: new Icon(Icons.star_border,color: Colors.blue,),
-              title: new Text("Interested", style: TextStyle(color: Colors.grey),),
-              onTap: () => {},
-            ),
-            new ListTile(
-              leading: new Icon(Icons.history,color: Colors.blue,),
-              title: new Text("Past Events", style: TextStyle(color: Colors.grey),),
-              onTap: () => {},
-            ),
-            new Divider(),
-            new ListTile(
-              leading: new Icon(Icons.event,color: Colors.blue,),
-              title: new Text("Add/Remove Event", style: TextStyle(color: Colors.grey),),
-              onTap: () => {},
-            ),
-            new ListTile(
-              leading: new Icon(Icons.perm_identity,color: Colors.blue,),
-              title: new Text("Admin Panel", style: TextStyle(color: Colors.grey),),
-              onTap: () => {},
-            ),
-            new ListTile(
-              leading: new Icon(Icons.info,color: Colors.blue,),
-              title: new Text("About Us", style: TextStyle(color: Colors.grey),),
-              onTap: () => {},
-            ),
-            new Divider(),
-            new ListTile(
-              leading: new Icon(Icons.exit_to_app,color: Colors.blue,),
-              title: new Text("Sign Out", style: TextStyle(color: Colors.grey),),
-              onTap: () => {},
+            Column(
+              children: <Widget>[
+                new ListTile(
+                  leading: new Icon(Icons.star_border,color: Colors.blue,),
+                  title: new Text("Interested", style: TextStyle(color: Colors.grey),),
+                  onTap: () => {},
+                ),
+                new ListTile(
+                  leading: new Icon(Icons.history,color: Colors.blue,),
+                  title: new Text("Past Events", style: TextStyle(color: Colors.grey),),
+                  onTap: () => {},
+                ),
+                new Divider(),
+                new ListTile(
+                  leading: new Icon(Icons.event,color: Colors.blue,),
+                  title: new Text("Add/Remove Event", style: TextStyle(color: Colors.grey),),
+                  onTap: () => {},
+                ),
+                new ListTile(
+                  leading: new Icon(Icons.perm_identity,color: Colors.blue,),
+                  title: new Text("Admin Panel", style: TextStyle(color: Colors.grey),),
+                  onTap: () => {},
+                ),
+                new ListTile(
+                  leading: new Icon(Icons.info,color: Colors.blue,),
+                  title: new Text("About Us", style: TextStyle(color: Colors.grey),),
+                  onTap: () => {},
+                ),
+                new Divider(),
+                new ListTile(
+                  leading: new Icon(Icons.exit_to_app,color: Colors.blue,),
+                  title: new Text("Sign Out", style: TextStyle(color: Colors.grey),),
+                  onTap: () => {},
+                ),
+              ],
             ),
           ],
         ),
       ),
     );
   }
+}
+
+Widget accountInfo({String name = "guest" , String emailID = "Login in to your account"}){
+  return Container(
+    padding: EdgeInsets.only(top: 10.0),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: <Widget>[
+        Container(
+          alignment: Alignment.centerLeft,
+          child: Text(name, style: TextStyle(color: Colors.black87), textAlign: TextAlign.left, textDirection: TextDirection.ltr,),
+        ),
+        Container(
+          padding: EdgeInsets.only(top: 5.0),
+          alignment: Alignment.centerLeft,
+          child: Text(emailID,style: TextStyle(color: Colors.grey,fontSize: 11.0),),
+        ),
+      ],
+    ),
+  );
 }
